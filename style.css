@@ -590,8 +590,7 @@ body{
 }
 /*نهاية المنيو*/
 
-/*بداية البوكس الاول*/
-.div1 {
+/*بداية البوكس الاول*/.div1 {
   background-color: black;
   width: 100%;
   height: 551px;
@@ -684,100 +683,218 @@ body{
 
 /*بداية البوكس الثاني*/
 .div2 {
-  background-color: rgb(255, 255, 255); /* خلفية باللون الأسود */
-  width:100%; /* تحديد العرض */
-  height: 551px; /* تحديد الارتفاع */
-  position: relative; /* لتحديد الموقع */
+  background-color: rgb(255, 255, 255); 
+  width: 100%;
+  height: 100vh; /* ارتفاع الشاشة بالكامل */
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* ارتفاع الشاشة بالكامل */
+  overflow: hidden;
 }
-.control{
+
+/* تحكم الروبوت */
+.control {
   position: absolute;
   right: 350px;
   max-width: 90%;
   height: auto;
   transform: scale(0.4);
 }
-.gamep{
+
+/* وصف النص */
+.gamep {
   color: rgb(77, 29, 55);
   position: relative;
   width: 500px;
   direction: rtl;
-  transform: translate(20px , -120px);
+  transform: translate(20px, -120px);
   font-weight: bold;
   font-size: 1.2rem;
 }
-.card1 {
+
+/* كروت الألعاب */
+.card1, .card2 {
   max-width: 200px;
-  transform: translate(500px , 100px);
-}
-.card1 p{
+  position: absolute;
   color: rgb(77, 29, 55);
   font-weight: bold;
   text-align: center;
 }
-.card1 h2{
-  color:#d7b52c;
-  text-align:center ;
-}
-.card2 {
-  max-width: 200px;
-  transform: translate(400px , 100px);
-}
-.card2 p{
-  color: rgb(77, 29, 55);
-  font-weight: bold;
+
+.card1 h2, .card2 h2 {
+  color: #d7b52c;
   text-align: center;
 }
-.card2 h2{
-  color:#d7b52c;
-  text-align:center ;
+
+.card1 p, .card2 p {
+  text-align: center;
 }
-.mario{
+
+/* تصميم الصور المتحركة */
+.mario, .fight {
   width: 200px;
   height: 100px;
-  display: flex
+  display: flex;
 }
-.fight{
-  width: 200px;
-  height: 100px;
-  transform: translate(40px , 10px);
+
+.fight {
+  transform: translate(40px, 10px);
+}
+
+/* شاشة كبيرة (لابتوب أو أكبر من 1024px) */
+@media (min-width: 1024px) {
+  .control {
+    right: 350px;
+    transform: scale(0.4);
+  }
+
+  .gamep {
+    transform: translate(20px, -120px);
+  }
+
+  .card1 {
+    transform: translate(500px, 100px);
+  }
+
+  .card2 {
+    transform: translate(400px, 100px);
+  }
+}
+
+/* شاشة صغيرة (جوال أو أقل من 1024px) */
+@media (max-width: 1023px) {
+  /* تحكم الروبوت */
+  .control {
+    position: relative;
+    right: auto;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  /* نص اللعبة */
+  .gamep {
+    width: 90%;
+    transform: none;
+    font-size: 1rem;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  /* كروت الألعاب */
+  .card1, .card2 {
+    max-width: 90%;
+    position: relative;
+    margin: 20px auto;
+    transform: none;
+  }
+
+  .card1 h2, .card2 h2 {
+    font-size: 1.5rem;
+  }
+
+  .mario, .fight {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .fight {
+    transform: none;
+  }
 }
 /*نهاية البوكس الثاني*/
 
-/*بداية البوكس الثالث*/
-.div3 {
+/*بداية البوكس الثالث*/.div3 {
   background-color: black; /* خلفية باللون الأسود */
-  width:100%; /* تحديد العرض */
+  width: 100%; /* تحديد العرض */
   height: 551px; /* تحديد الارتفاع */
   position: relative; /* لتحديد الموقع */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* لمنع العناصر من الخروج عن الإطار */
 }
 
+/* شاشة كبيرة (لابتوب أو أكبر من 1024px) */
+@media (min-width: 1024px) {
+  .div3 {
+    height: 551px; /* ارتفاع ثابت */
+  }
+}
+
+/* شاشة صغيرة (جوال أو أقل من 1024px) */
+@media (max-width: 1023px) {
+  .div3 {
+    height: auto; /* تغيير الارتفاع ليتناسب مع المحتوى */
+    padding: 20px; /* إضافة مسافة للحفاظ على التنسيق */
+  }
+}
 /*نهاية البوكس الثالث*/
 
 /*بداية البوكس الرابع*/
 .div4 {
-  background-color: rgb(255, 255, 255); /* خلفية باللون الأسود */
-  width:100%; /* تحديد العرض */
+  background-color: rgb(255, 255, 255); /* خلفية باللون الأبيض */
+  width: 100%; /* تحديد العرض */
   height: 551px; /* تحديد الارتفاع */
   position: relative; /* لتحديد الموقع */
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* لمنع العناصر من الخروج */
 }
-.g1{
+
+/* تصميم الصورة g1 */
+.g1 {
   position: absolute;
   left: 910px;
-  transform: scale(0.9);
+  transform: scale(0.9); /* تصغير الحجم */
 }
-.g2{
+
+/* تصميم الصورة g2 */
+.g2 {
   position: absolute;
   right: 930px;
-  transform: scale(0.9);
+  transform: scale(0.9); /* تصغير الحجم */
+}
+
+/* شاشة كبيرة (لابتوب أو أكبر من 1024px) */
+@media (min-width: 1024px) {
+  .g1 {
+    left: 910px; /* الحفاظ على نفس المكان */
+    transform: scale(0.9);
+  }
+
+  .g2 {
+    right: 930px; /* الحفاظ على نفس المكان */
+    transform: scale(0.9);
+  }
+}
+
+/* شاشة صغيرة (جوال أو أقل من 1024px) */
+@media (max-width: 1023px) {
+  .div4 {
+    height: auto; /* تغيير الارتفاع ليتناسب مع المحتوى */
+    padding: 20px; /* إضافة مسافة للحفاظ على التنسيق */
+  }
+
+  .g1, .g2 {
+    position: relative;
+    transform: scale(0.6); /* تصغير الحجم في الشاشات الصغيرة */
+    margin: 20px auto; /* توسيط الصور في الشاشة */
+  }
+
+  /* إذا أردت جعل الصور أكثر مرونة، يمكننا تعديل مكانها */
+  .g1 {
+    left: auto;
+    right: auto;
+  }
+
+  .g2 {
+    left: auto;
+    right: auto;
+  }
 }
 /*نهاية البوكس الرابع*/
