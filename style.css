@@ -594,71 +594,92 @@ body{
 .div1 {
   background-color: black;
   width: 100%;
-  min-height: 551px; /* نخليها أقل ارتفاع بدلاً من ثابت */
-  padding: 20px; /* عشان ما يلتصق المحتوى بالحواف */
+  height: 551px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* نخلي العناصر فوق بعض بالجوال */
-  text-align: center; /* وسط النصوص */
-  box-sizing: border-box; /* ضمان التماسك مع الـpadding */
+  overflow: hidden;
 }
 
-/* التنسيق الأساسي للشاشات الكبيرة */
-.robot {
-  position: absolute;
-  left: 290px;
-  width: 100%;
-  height: 750px;
-  transform: scale(0.5);
+/* شاشة كبيرة */
+@media (min-width: 1024px) {
+  .robot {
+    position: absolute;
+    left: 290px;
+    width: 100%;
+    height: 750px;
+    transform: scale(0.5);
+  }
+
+  .divbox {
+    position: absolute;
+    top: 435px;
+    left: 1150px;
+    color: black;
+    background-color: black;
+  }
+
+  .h1 {
+    position: absolute;
+    left: 200px;
+    font-size: 2rem;
+    color: azure;
+  }
+
+  .p1 {
+    position: absolute;
+    top: 330px;
+    left: 50px;
+    direction: rtl;
+    width: 400px;
+    font-size: 20px;
+    color: azure;
+  }
 }
 
-
-/* للشاشات الصغيرة */
-@media (max-width: 767px) {
+/* شاشة صغيرة (جوال وأجهزة عرضها أقل من 1024px) */
+@media (max-width: 1023px) {
   .robot {
     position: relative;
-    left: 0;
     width: 100%;
-    max-width: 350px; /* حجم مناسب للجوال */
     height: auto;
+    transform: scale(1);
+    max-width: 300px;
     margin: 0 auto;
-    display: block;
+  }
+
+  .divbox {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 20px;
+    background-color: black;
+    color: black;
+    text-align: center;
+  }
+
+  .h1 {
+    position: relative;
+    left: auto;
+    font-size: 1.5rem;
+    color: azure;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .p1 {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 90%;
+    font-size: 16px;
+    color: azure;
+    margin: 10px auto;
+    text-align: center;
   }
 }
 
-.divbox{
-  position: absolute;
-  top: 435px;
-  left: 1150px;
-  color: black;
-  background-color: black;
-}
-.h1 {
-  position: absolute;
-  left: 200px;
-  font-size: 2rem;
-  color: azure;
-}
-.p1{
-  position: absolute;
-  top: 330px;
-  left: 50px;
-  direction: rtl;
-  width: 400px;
-  font-size: 20px;
-  color: azure;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; /* في البداية، النص غير مرئي */
-  }
-  100% {
-    opacity: 1; /* في النهاية، النص يصبح مرئي */
-  }
-}
 /*نهاية البوكس الاول*/
 
 /*بداية البوكس الثاني*/
